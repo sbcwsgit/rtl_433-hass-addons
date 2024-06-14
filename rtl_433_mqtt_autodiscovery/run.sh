@@ -54,6 +54,12 @@ else
   if [[ $LOG_LEVEL == "debug" ]]; then
     OTHER_ARGS="${OTHER_ARGS} --debug"
   fi
+
+  # This is optional, only add arg is IDs are specified
+  IDS=$(bashio::config "ids")
+  if [ ! -z "${ID}" ]; then
+    OTHER_ARGS="${OTHER_ARGS} -I ${IDS}"
+  fi
 fi
 
 # Set a default port for when the container is being run directly.
