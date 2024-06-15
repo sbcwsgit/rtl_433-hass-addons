@@ -57,7 +57,7 @@ else
 
   # This is optional, only add arg is IDs are specified
   IDS=$(bashio::config "ids")
-  if [ ! -z "${ID}" ]; then
+  if [ ! -z "${IDS}" ]; then
     OTHER_ARGS="${OTHER_ARGS} -I ${IDS}"
   fi
 fi
